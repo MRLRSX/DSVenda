@@ -4,17 +4,17 @@ import br.com.mrlrsx.dsvenda.entities.Seller;
 
 import java.io.Serializable;
 
-public class SellerSucessDTO implements Serializable {
+public class SalesSucessDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private Long visited;
     private String sellerName;
     private Long deals;
 
-    public SellerSucessDTO(){}
+    public SalesSucessDTO(){}
 
-    public SellerSucessDTO(Seller seller, Long visited, Long deals){
-        this.sellerName = seller.getName();
+    public SalesSucessDTO(String name, Long visited, Long deals){
+        this.sellerName = name;
         this.visited = visited;
         this.deals = deals;
     }

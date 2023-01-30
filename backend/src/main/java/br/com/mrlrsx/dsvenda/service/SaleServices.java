@@ -2,6 +2,7 @@ package br.com.mrlrsx.dsvenda.service;
 
 import br.com.mrlrsx.dsvenda.dto.SaleDTO;
 import br.com.mrlrsx.dsvenda.dto.SaleSumDTO;
+import br.com.mrlrsx.dsvenda.dto.SalesSucessDTO;
 import br.com.mrlrsx.dsvenda.repository.SaleRepository;
 import br.com.mrlrsx.dsvenda.repository.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,13 @@ public class SaleServices {
 
     @Transactional(readOnly = true)
     public List<SaleSumDTO> amountGroupedBySeller(){
-       return saleRepository.amountGroupedBySeller();
+         List<SaleSumDTO> saleSumDTO = saleRepository.amountGroupedBySeller();
+        return saleSumDTO;
+    }
+
+    @Transactional(readOnly = true)
+    public List<SalesSucessDTO> sucessGroupedBySeller(){
+        List<SalesSucessDTO> salesSucessDTO =  saleRepository.sucessGroupedBySeller();
+        return salesSucessDTO;
     }
 }

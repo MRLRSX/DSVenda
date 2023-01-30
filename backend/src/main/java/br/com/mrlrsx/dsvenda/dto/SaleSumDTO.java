@@ -13,8 +13,8 @@ public class SaleSumDTO implements Serializable {
 
     public SaleSumDTO(){}
 
-    public SaleSumDTO(Seller seller, Double sum){
-        this.sellerName = seller.getName();
+    public SaleSumDTO(String name, Double sum){
+        this.sellerName = name;
         this.sum = sum;
     }
     public String getSellerName() {

@@ -2,6 +2,7 @@ package br.com.mrlrsx.dsvenda.resource;
 
 import br.com.mrlrsx.dsvenda.dto.SaleDTO;
 import br.com.mrlrsx.dsvenda.dto.SaleSumDTO;
+import br.com.mrlrsx.dsvenda.dto.SalesSucessDTO;
 import br.com.mrlrsx.dsvenda.service.SaleServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -31,5 +32,11 @@ public class SaleResource {
     public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller(){
         List<SaleSumDTO> saleSumDTO = saleServices.amountGroupedBySeller();
         return ResponseEntity.ok().body(saleSumDTO);
+    }
+
+    @GetMapping(value="/sucess-by-seller")
+    public ResponseEntity<List<SalesSucessDTO>> sucessGroupedBySeller(){
+        List<SalesSucessDTO> salesSucessDTO = saleServices.sucessGroupedBySeller();
+        return ResponseEntity.ok().body(salesSucessDTO);
     }
 }
