@@ -19,6 +19,8 @@ function Barchart(){
             }
         ]
     };
+
+    
     return(
         <Chart 
           options={{...options, xaxis: mockData.labels}}
