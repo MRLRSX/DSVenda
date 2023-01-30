@@ -1,6 +1,7 @@
 package br.com.mrlrsx.dsvenda.dto;
 
 import br.com.mrlrsx.dsvenda.entities.Sale;
+import br.com.mrlrsx.dsvenda.entities.Seller;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -14,18 +15,20 @@ public class SaleDTO implements Serializable {
     private Double amount;
     private LocalDate date;
 
+    private SellerDTO sellerDTO;
 
     public SaleDTO(){}
 
     public SaleDTO(Sale entity){
-        this(entity.getId(), entity.getVisited(), entity.getDeals(), entity.getAmount(), entity.getDate());
+        this(entity.getId(), entity.getVisited(), entity.getDeals(), entity.getAmount(), entity.getDate(), entity.getSeller());
     }
-    public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date) {
+    public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date, Seller seller) {
         this.id = id;
         this.visited = visited;
         this.deals = deals;
         this.amount = amount;
         this.date = date;
+        this.sellerDTO = new SellerDTO(seller);
     }
 
     public Long getId() {
@@ -66,5 +69,13 @@ public class SaleDTO implements Serializable {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public SellerDTO getSellerDTO() {
+        return sellerDTO;
+    }
+
+    public void setSellerDTO(SellerDTO sellerDTO) {
+        this.sellerDTO = sellerDTO;
     }
 }
