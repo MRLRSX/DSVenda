@@ -1,8 +1,10 @@
-import Routes from "Routes";
+
+
+
 
 function App() {
   return (
-    <Routes/>
+    <h1>Olá Mundo!</h1>
   );
 }
 
